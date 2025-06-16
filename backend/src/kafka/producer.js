@@ -11,4 +11,4 @@ const sendMessage = async (topic, message) => {
   await producer.disconnect();
 };
 
-module.exports = sendMessage;
+module.exports = sendMessage; 

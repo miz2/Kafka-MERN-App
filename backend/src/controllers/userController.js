@@ -1,3 +1,5 @@
+// controllers/authController.js
+
 const { signUpSchema, signInSchema } = require('../validators/userValidator');
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
@@ -52,7 +54,8 @@ exports.signIn = async (req, res) => {
     if (!isMatch)
       return res.status(400).json({ message: 'Invalid credentials' });
 
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+    // ✅ Changed from userId -> id
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: '1h'
     });
 
