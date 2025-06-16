@@ -1,3 +1,4 @@
+// middleware/authMiddleware.js
 const jwt = require('jsonwebtoken');
 
 exports.authenticate = (req, res, next) => {
@@ -11,8 +12,10 @@ exports.authenticate = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log('Decoded JWT:', decoded); // 👈 debug line
-    req.user = decoded;
+    console.log('Decoded JWT:', decoded); // For debugging
+
+    req.user = { userId: decoded.id };
+
     next();
   } catch (err) {
     return res.status(403).json({ message: 'Invalid or expired token' });
