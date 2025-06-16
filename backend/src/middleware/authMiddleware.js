@@ -12,7 +12,7 @@ exports.authenticate = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log('Decoded JWT:', decoded); // For debugging
+    console.log('Decoded JWT:', decoded); 
 
     req.user = { userId: decoded.id };
 
