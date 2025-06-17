@@ -39,9 +39,11 @@ const Navbar = () => {
           </svg>
         </button>
 
-        {/* Avatar */}
+        {/* Avatar (logout on click) */}
         <div
-          className="size-9 rounded-full bg-cover bg-center"
+          onClick={handleLogout}
+          title="Click to logout"
+          className="size-9 rounded-full bg-cover bg-center cursor-pointer hover:opacity-80 transition-opacity"
           style={{
             backgroundImage:
               'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCcLICt-3sNaBJZBSz1TD6SeWreEqY0DnBS-J9N_jzPH6UjSgj1J3EOrIgOGp_i0hfww2VzKx74GXbRSjl-l3JMcDUw67_7bxLNVSyJt3rQu53G2n6QNmm2e9svqVoRL-sPpPrKFjVQYvQkKG9xJG0906_MwuWjxxlQyQGYBD2WnxVrvSizzVFTJhOIaS8HPFoUQd0NDuh_zm1G6kFLRhj3sabA0-1W99yM4JCC7nqfnyFqCPEMpA0VhpW2Z73jC2Jnj-IDJ-PO9To")',

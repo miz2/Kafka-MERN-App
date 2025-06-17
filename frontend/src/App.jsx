@@ -1,5 +1,8 @@
 // src/App.jsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Signin } from './pages/SignIn';
 import { Signup } from './pages/Signup';
 import { Dashboard } from './pages/Dashboard';
@@ -9,6 +12,7 @@ import Layout from './pages/Layout';
 function App() {
   return (
     <BrowserRouter>
+      <ToastContainer position="top-right" autoClose={3000} />
       <Routes>
         {/* Routes without navbar */}
         <Route path="/signin" element={<Signin />} />
