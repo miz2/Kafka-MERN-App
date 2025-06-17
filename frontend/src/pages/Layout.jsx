@@ -1,16 +1,18 @@
 import React from "react";
-import SidebarMenu from "./SideMenu";
 import Navbar from "../components/Navbar";
+import SidebarMenu from "./SideMenu";
 
 const Layout = ({ children }) => {
   return (
-    <div className="flex h-screen">
-      <SidebarMenu />
-      <div className="flex-1 flex flex-col overflow-y-auto">
-        {/* <Navbar /> */}
-        <div className="p-6">{children}</div>
+    <>
+      <Navbar />
+      <div className="flex">
+        <SidebarMenu />
+        <main className="flex-1 bg-[#f9fafb] min-h-screen overflow-y-auto">
+          {children}
+        </main>
       </div>
-    </div>
+    </>
   );
 };
 

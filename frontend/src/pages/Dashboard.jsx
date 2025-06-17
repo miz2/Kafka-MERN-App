@@ -65,9 +65,9 @@ export const Dashboard = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="flex">
-        <SidebarMenu />
+        {/* <SidebarMenu /> */}
         <main className="flex-1 bg-[#f9fafb] min-h-screen overflow-y-auto">
           <TopBar />
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
