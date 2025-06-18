@@ -8,7 +8,7 @@ const userRoutes = require('./routes/userRoutes');
 const activityRoutes = require('./routes/activityRoutes');
 const ruleRoutes = require('./routes/ruleRoutes');
 dotenv.config();
-
+const aiRoute=require('./routes/ai'); 
 const app = express();
 
 app.use(cors({
@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use('/api/users', userRoutes);
 app.use('/api/activity', activityRoutes);
 app.use('/api/rules', ruleRoutes); 
-
+app.use('/api/ai', aiRoute);
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
